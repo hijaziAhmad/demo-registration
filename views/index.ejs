@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include partials/headjs %> 
+</head>
+<body>
+  <!-- header -->
+  <div class="container-fluid header-container">
+    <div class="container ">
+      <div class="row">
+        <div class="col-12">
+          <div class="logo-container">
+            <img class="logo" src="/images/logo_sample.png" alt="">
+            <div class="logo-text">Parti <span class="logo-text-emp">Bangsa</span> Malaysia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- instruction -->
+  <div class="container instruction-parent" id="instruction">
+    <div class="row">
+      <div class="col-12">
+        <div class="instruction">
+          <div class="form-title">Syarat-syarat permohonan & arahan</div>
+          <ol>
+            <li>
+              Permohonan keanggotaan dibuka hanya kepada warganegara Malaysia yang <b>berumur 18 tahun ke atas</b>.</li>
+            <li>Setiap butiran di bawah hendaklah <b>diisi dengan lengkap</b>. Permohonan anda tidak akan diproses jika sekiranya butiran yang diberikan tidak lengkap.</li>
+            <li>Majlis Pimpinan Pusat berhak mengambil sebarang keputusan atas mana-mana permohonan pendaftaran keanggotaan dan keputusan itu adalah muktamad.</li>
+          </ol>
+        </div>
+        <button class="main-btn" onclick="showForm()">Setuju</button>
+      </div>
+    </div>
+  </div>
+
+<!-- form -->
+  <div id="RegistrationForm" class="container form-parent form-parent-hide-section" style="display: none;">
+    <div class="row">
+      <div class="col-12">
+        <div class="form-section-title">
+         Butiran Peribadi
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label for="nama" class="form-label">Nama Penuh (Mengikut Kad Pengenalan)</label>
+        <div id="namarequired" class="required-hide">
+          * Sila isikan maklumat
+        </div>
+        <input type="text" id="nama" class="form-input">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <label for="ic" class="form-label">No. kad pengenalan (baru/lama)</label>
+        <div id="icrequired" class="required-hide">
+          * Sila isikan maklumat
+        </div>
+        <input type="text" id="ic" class="form-input" maxlength="14">
+      </div>
+      <div class="col-md-8">
+        <label for="bangsa" class="form-label">Bangsa / Keturunan</label>
+        <div id="bangsarequired" class="required-hide">
+          * Sila isikan maklumat
+        </div>
+         <select name="bangsa" id="bangsa" class="form-select">
+          <option value="" disabled selected>--Sila pilih bangsa / keturunan anda--</option>
+          <option value="Melayu">Melayu</option>
+          <option value="Cina">Cina</option>
+          <option value="India">India</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label for="address" class="form-label">Alamat Surat Menyurat</label>
+        <div id="addressrequired" class="required-hide">
+          * Sila isikan maklumat
+        </div>
+        <textarea type="text" id="address" class="form-input"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="email" class="form-label">Alamat E-mel</label>
+        <div id="emailrequired" class="required-hide">
+          * Sila isikan maklumat
+        </div>
+        <input type="email" id="email" class="form-input">
+      </div>
+      <div class="col-md-6">
+        <label for="mobile" class="form-label">No. Telefon</label>
+        <div id="mobilerequired" class="required-hide">
+          * Sila isikan maklumat
+        </div>
+        <input type="text" id="mobile" class="form-input" maxlength="12">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="form-section-title">
+          Maklumat Pendidikan
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="kelulusan" class="form-label">Kelulusan</label>
+        <div id="kelulusanrequired" class="required-hide">
+          * Sila isikan maklumat
+        </div>
+         <select name="kelulusan" id="kelulusan" class="form-select">
+          <option value="" disabled selected>--Sila pilih kelulusan anda--</option>
+          <option value="Sekolah">UPSR / PMR / SPM / SPTM</option>
+          <option value="Pra-Universiti">Pra-Universiti</option>
+          <option value="Undergraduate">Diploma / Ijazah </option>
+          <option value="Postgraduate">Sarjana / PHD </option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="bidangPelajaran" class="form-label">Bidang Pengajian</label>
+        <div id="bidangPelajaranrequired" class="required-hide">
+          * Sila isikan maklumat
+        </div>
+        <input type="bidangPelajaran" id="bidangPelajaran" class="form-input">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="pekerjaan" class="form-label">Pekerjaan</label>
+        <div id="pekerjaanrequired" class="required-hide">
+          * Sila isikan maklumat
+        </div>
+         <select name="pekerjaan" id="pekerjaan" class="form-select">
+          <option value="" disabled selected>--Sila pilih satu--</option>
+          <option value="Kerajaan">Kerajaan</option>
+          <option value="Swasta">Swasta</option>
+          <option value="Sendiri">Sendiri</option>
+          <option value="Tidak Berkerja">Belajar / Tidak Berkerja</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="bidangPekerjaan" class="form-label">Bidang Pekerjaan</label>
+        <div id="bidangPekerjaanrequired" class="required-hide">
+          * Sila isikan maklumat
+        </div>
+        <input type="bidangPekerjaan" id="bidangPekerjaan" class="form-input">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="form-section-title">
+          Parlimen & Dun Yang Ingin Disertai
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <label for="negeri" class="form-label">Negeri</label>
+         <select name="negeri" id="negeri" class="form-select" onchange="resetList('Parlimen');showList('negeri');">
+          <option value="" disabled selected>--Sila pilih satu--</option>
+          <option value="14">Wilayah Persekutuan</option>
+          <option value="10">Selangor</option>
+          <option value="06">Pahang</option>
+          <option value="01">Johor</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="Parlimen" class="form-label">Parlimen</label>
+         <select name="Parlimen" id="Parlimen" class="form-select" onchange="showList('Parlimen')" disabled >
+          <option value="" disabled selected>--Sila pilih negeri--</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="rating" class="form-label">Dun</label>
+         <select name="Dun" id="Dun" class="form-select" onchange='' disabled>
+          <option value="" disabled selected>--Sila pilih Parlimen--</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="form-section-title">
+          Cadangan dan Sokongan (Jika Ada)
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <label for="NamaPencadang" class="form-label">Nama Pencadang</label>
+        <input type="text" id="NamaPencadang" class="form-input">
+      </div>
+      <div class="col-md-4">
+        <label for="noPencadang" class="form-label">No. Ahli</label>
+        <input type="text" id="noPencadang" class="form-input"  maxlength="8">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <label for="namaPenyokong" class="form-label">Nama Penyokong</label>
+        <input type="text" id="namaPenyokong" class="form-input">
+      </div>
+      <div class="col-md-4">
+        <label for="noPenyokong" class="form-label">No. Ahli</label>
+        <input type="text" id="noPenyokong" class="form-input" maxlength="8">
+      </div>
+    </div>
+
+
+
+    
+
+    
+  </div>
+
+<!-- declaration -->
+<div class="container instruction-parent form-parent-hide-section" id="declaration"style="display: none;">
+  <div class="row">
+    <div class="col-12">
+      <div class="instruction">
+        <div class="form-title">AKUAN PEMOHON</div>
+        <div class="required-hide" id="agreementrequired">
+          * Sila tandakan kedua-dua akuan sebelum mendaftar
+        </div>
+        
+        <label class="agreement-label">
+          <input type="checkbox" name="agreement1" id="agreement1"/>
+          Saya mengakui dengan benar dan jujur bahawa:<br>
+          <ul style="list-style-type: lower-alpha; padding-bottom: 0;">
+           <li>Saya seorang warganegara Malaysia.</li>
+           <li>
+            Saya akan mematuhi dan menjunjung segala dasar, peraturan dan tindakan yang ditetapkan Parti Bangsa Malaysia.</li>
+            <li>
+              Segala butiran yang diberikan oleh saya di atas adalah benar.</li>
+          </ul>
+        </label>
+        <label class="agreement-label">
+          <input type="checkbox" name="" id="agreement2"/>
+          Saya juga dengan ini menerima sebarang keputusan daripada Parti Bangsa Malaysia untuk membatalkan permohonan ini jika saya melanggar mana-mana syarat yang tersebut di atas.
+        </label>
+                 
+      </div>
+
+      <!-- insert google recaptcha here -->
+      <form action="/verify" method="POST">
+        <div class="g-recaptcha" data-sitekey="6LfZ7EwdAAAAANrPhkc1U-sPZtn83qPYjlX5Je-n" data-callback="correctCaptcha"></div>
+        <br/>
+      </form>
+
+      <button class="main-btn" onclick="checkData()" id='agreed' disabled=true>Daftar</button>
+    </div>
+  </div>
+</div>
+
+<!-- loader -->
+<div class="container respond-parent " id='respond' style="display: none;">
+  <div class="loader-container" id="loaderIcon">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="254px" height="254px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+      <circle cx="50" cy="50" r="31" stroke-width="7" stroke="#31328B" stroke-dasharray="48.69468613064179 48.69468613064179" fill="none" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="rotate" dur="0.8928571428571428s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
+      </circle>
+      <circle cx="50" cy="50" r="23" stroke-width="7" stroke="#CD2A2D" stroke-dasharray="36.12831551628262 36.12831551628262" stroke-dashoffset="36.12831551628262" fill="none" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="rotate" dur="0.8928571428571428s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;-360 50 50"></animateTransform>
+      </circle></svg>
+  </div>
+  <!-- <div class="loader-container" id="loaderIcon">
+    <svg xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 128 128"width="254px" height="254px"
+    style=" fill:#000000;"><path fill="#fff" d="M64 16A48 48 0 1 0 64 112A48 48 0 1 0 64 16Z"></path><path fill="#31328B" d="M64 25A39 39 0 1 0 64 103A39 39 0 1 0 64 25Z"></path><path fill="none" stroke="#CD2A2D" stroke-miterlimit="10" stroke-width="6" d="M64 16A48 48 0 1 0 64 112A48 48 0 1 0 64 16Z"></path><path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6" d="M42 69L55.55 81 86 46"></path></svg>
+  </div> -->
+  <div class="loader-text-title" id="loaderTitle">Sila tunggu sebentar...</div>
+  <div class="loader-text-desc" id="loaderDesc">Maklumat anda sedang dimuat naik</div>
+</div>
+
+  <!-- to implement google recaptcha -->
+</body>
+
+<script>
+  document.getElementsByTagName("body").onload = ()=>{
+    scrollToEl('instruction')
+  };
+  function correctCaptcha(){
+    document.getElementById('agreed').disabled = false;
+  }
+  function scrollToEl(el){
+    const element = document.getElementById(el);
+    var header = document.querySelector('.header-container')
+    const offset = header.offsetHeight+40;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  } 
+  function showForm(){
+    document.getElementById("RegistrationForm").classList.remove("form-parent-hide-section")
+    document.getElementById("declaration").classList.remove("form-parent-hide-section")
+    document.getElementById("RegistrationForm").style.display="block"
+    document.getElementById("declaration").style.display="block"
+    document.getElementById("instruction").classList.add("form-parent-hide-section")
+
+    setTimeout(()=>{
+      document.getElementById("instruction").style.display="none"
+    },1000)
+  }
+  var negeri
+  function showList(type){
+    
+    switch(type) {
+      case 'negeri':
+      // console.log('fire showlist, negeri')
+        // change submission link
+        // fillup Parlimen
+        negeri=document.getElementById("negeri").value;
+        var ParlimenList = Object.keys(ParlimentList[negeri])
+        ParlimenFiller(ParlimenList);
+        break;
+      case 'Parlimen':
+      // console.log('fetching Dun showlist, Parlimen')
+        // fillup Dun
+        var Parlimen=document.getElementById("Parlimen").value;
+        var ParlimenList =ParlimentList[negeri][Parlimen]
+        DunFiller(ParlimenList);
+        break;
+
+    }
+  }
+  function ParlimenFiller(input){
+   
+    // console.log('filling up Parlimen')
+    // console.log(input)
+    var html='<option value="" disabled selected>--Sila pilih satu--</option>'
+    
+    for (i in input){
+      html+=`<option value="${input[i]}">${input[i]}</option>`
+    }
+    document.getElementById('Parlimen').disabled=false
+    document.getElementById('Parlimen').innerHTML=html
+  }
+  function DunFiller(input){
+    // console.log('filling up Dun')
+    // console.log(input)
+    var html='<option value="" disabled selected>--Sila pilih satu--</option>'
+    for (i in input){
+      html+=`<option value="${input[i]}">${input[i]}</option>`
+    }
+    document.getElementById('Dun').disabled=false
+    document.getElementById('Dun').innerHTML=html
+  }
+
+  function resetList(type){
+    console.log('reseting list')
+    switch (type){
+      case 'Parlimen':
+      console.log('reseting Parlimen list')
+        document.getElementById('Parlimen').disabled=true;
+        document.getElementById('Parlimen').innerHTML='<option value="" disabled selected>--Sila pilih negeri--</option>';
+        console.log('reseting Dun list')
+        document.getElementById('Dun').disabled=true;
+        document.getElementById('Dun').innerHTML='<option value="" disabled selected>--Sila pilih Parlimen--</option>';
+        break;
+      case 'Dun':
+      console.log('reseting Dun list')
+        document.getElementById('Dun').disabled=true;
+        document.getElementById('Dun').innerHTML='<option value="" disabled selected>--Sila pilih Parlimen--</option>';
+        break;
+    }
+
+  }
+</script>
+</html>
